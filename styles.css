@@ -91,13 +91,15 @@
 /*Text------------------------------------*/
 .infoText
 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   position: absolute;
   text-align: right;
   padding: 0 20px;
   font: 17px Jura,sans-serif;
   color: black;
   background-color: white;
-  right: 20px;
   width: 450px;
   object-fit: cover;
   background-position: center;
