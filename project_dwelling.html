@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- Modal -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">        
+        <!-- Bootstrap link -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>Architecture Portfolio</title>
+        <link href="https://allfont.net/allfont.css?fonts=jura-light" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jura">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+
+    </head>
+    <!-- BRACKGROUND and MARGINS -->
+    <body class="background">
+        <!-- TOP OF PAGE/ HEADER -->
+        <header >
+            <nav class="navbar navbar-expand-lg navbar-light bg-white container">
+                <div class="logo pl-4">
+                    <a href="index.html"><img  src="assets/logo.png" alt="omar ruiz logo"></a>
+                </div>
+                <div class="project-name">
+                    <div class="author">Omar Ruiz</div>
+                    <div class= "subtheme">/Architecture Portfolio</div>
+                </div>
+                <ul class=" navbar-nav mx-auto">
+                    <li class="nav-item">
+                       <a class="nav-link" href="service.html">Service</a>
+                    </li>
+                    <li class="nav-item">
+                       <a class="nav-link" href="info.html">Info</a>
+                    </li>
+                    <li class="nav-item">
+                       <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <!-- MIDLLE OF PAGE/MAIN CONTENT -->
+        <div class="d-flex justify-content-left container">
+            <div class="main_theme">
+                <div class="bg-or-dwelling pb-5 mt-3">
+                    Dwelling
+                </div>
+            </div>
+        </div>
+        <!-- Colunm Pictures -->
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-md-4">
+                    <div><img class="myImages" src="assets/projects/dwelling/dwelling_1.png"id="myImg"></div>
+                </div>
+                <div class="col-md-4">
+                    <div><img class="myImages" src="assets/projects/dwelling/dwelling_2.png"id="myImg"></div>
+                </div>
+                <div class="col-md-4">
+                    <div><img class="myImages" src="assets/projects/dwelling/dwelling_3.png"id="myImg"></div>
+                </div>
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+                  <span class="close">&times;</span>
+                  <img class="modal-content" id="img01">
+                  <div id="caption"></div>
+                </div>  
+            </div>
+            <div class="back">
+                <a href="project_urbanism.html" class="back_button">&#9666;</a>
+            </div>
+        </div>
+        <!-- BOTTOM OF PAGE/FOOTER -->
+        <footer class="d-flex align-items-center container">
+            <!--<nav class="navbar navbar-expand-lg navbar-light bg-light">-->
+                <ul class="mr-auto social-media-icon mt-3">
+                    <li class=""><a href="http://instantvisualizer.blogspot.com/" target="_blank"class="fa fa-rss"></a></li>
+                    <li class=""><a href="https://www.pinterest.com/oruizgeronimo/" target="_blank"class="fa fa-pinterest"></a></li>
+                    <li class=""><a href="https://www.linkedin.com/in/oruizgeronimo/" target="_blank"class="fa fa-linkedin"></a></li>
+                </ul>
+                <div class= "copyright">&copy;
+                    <script>
+                        document.write(new Date().getFullYear());
+                    </script> by Omar Ruiz
+                </div>
+            <!--</nav>-->
+        </footer>
+        <!-- Jquery link -->
+        <script src="http://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script>
+            // create references to the modal...
+            var modal = document.getElementById('myModal');
+            // to all images -- note I'm using a class!
+            var images = document.getElementsByClassName('myImages');
+            // the image in the modal
+            var modalImg = document.getElementById("img01");
+            // and the caption in the modal
+            var captionText = document.getElementById("caption");
+
+            // Go through all of the images with our custom class
+            for (var i = 0; i < images.length; i++) {
+              var img = images[i];
+              // and attach our click listener for this image.
+              img.onclick = function(evt) {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                captionText.innerHTML = this.alt;
+              }
+            }
+
+            var span = document.getElementsByClassName("close")[0];
+
+            span.onclick = function() {
+              modal.style.display = "none";
+            }
+        </script>        
+    </body>
+</html>
